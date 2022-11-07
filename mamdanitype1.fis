@@ -1,0 +1,74 @@
+[System]
+Name='mamdanitype1'
+Type='mamdani'
+Version=2.0
+NumInputs=4
+NumOutputs=1
+NumRules=23
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='skin_lightness'
+Range=[0 100]
+NumMFs=3
+MF1='dark':'zmf',[8.8415 33.4754]
+MF2='mid':'trapmf',[20.306258322237 38.948069241012 53.728362183755 69.0412782956059]
+MF3='light':'smf',[48.5353 85.7723]
+
+[Input2]
+Name='eye_size'
+Range=[0 50]
+NumMFs=2
+MF1='big':'linsmf',[14.6220159151194 29.9403183023873]
+MF2='small':'linzmf',[17.1976 30.4045]
+
+[Input3]
+Name='lips_size'
+Range=[0 100]
+NumMFs=2
+MF1='big':'linsmf',[65.1797603195739 90.3462050599201]
+MF2='small':'linzmf',[64.5139813581891 94.607190412783]
+
+[Input4]
+Name='between_eyes_size'
+Range=[100 200]
+NumMFs=2
+MF1='big':'linsmf',[114.447403462051 159.054593874834]
+MF2='small':'linzmf',[121.50466045273 165.712383488682]
+
+[Output1]
+Name='race'
+Range=[0 1]
+NumMFs=3
+MF1='black':'trimf',[0.66 0.825 1]
+MF2='white':'trimf',[0.33 0.495 0.66]
+MF3='asian':'trimf',[0 0.165 0.33]
+
+[Rules]
+1 1 1 1, 1 (1) : 1
+2 1 1 1, 2 (1) : 1
+3 1 1 1, 2 (1) : 1
+1 2 1 1, 1 (1) : 1
+2 2 1 1, 3 (1) : 1
+3 2 1 1, 3 (1) : 1
+1 1 2 1, 1 (1) : 1
+2 1 2 1, 2 (1) : 1
+3 1 2 1, 2 (1) : 1
+1 2 2 1, 3 (1) : 1
+2 2 2 1, 3 (1) : 1
+3 2 2 1, 3 (1) : 1
+1 1 1 2, 1 (1) : 1
+2 1 1 2, 2 (1) : 1
+3 1 1 2, 2 (1) : 1
+1 2 1 2, 1 (1) : 1
+2 2 1 2, 2 (1) : 1
+3 2 1 2, 2 (1) : 1
+1 1 2 2, 1 (1) : 1
+2 1 2 2, 2 (1) : 1
+3 1 2 2, 2 (1) : 1
+1 2 2 2, 1 (1) : 1
+3 2 2 2, 3 (1) : 1
